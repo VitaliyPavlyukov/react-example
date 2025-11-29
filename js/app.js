@@ -35,23 +35,38 @@
 
 // Компонент как класс
 class App extends React.Component {
-    helpText = "Help Text!"
+    constructor(props) {
+        super(props)
+        this.state = {
+            helpText: "Help Text!",
+            userData: ""
+        }
+        this.inputClick = this.inputClick.bind(this)
+    }    
 
     render() {
         return (
             <div className="helpClass">
-                <Header title="Шапка сайта"/>
-                <Header title="Шапка сайта 2"/>
+                <Header title="Шапка сайта"/>                
 
-                <h3>{this.helpText}</h3>
-                <input placeholder={this.helpText} onMouseEnter={this.inputMouseEnter} />
-                <p>{this.helpText === 'Help Text!' ? "Да" : "Нет"}</p>
+                <h3>{this.state.helpText}</h3>
+                <h3>{this.state.userData}</h3>
+
+                <input
+                    placeholder={this.state.helpText}
+                    onChange={event => this.setState({userData: event.target.value})}
+                    onClick={this.inputClick} />
+                <p>{this.state.helpText === 'Help Text!' ? "Да" : "Нет"}</p>
                 <Image image="./img/react.jpg" />
             </div>
         )
     }
 
     inputMouseEnter() {console.log("helpText")}
+    inputClick() {
+        this.setState({helpText: "Changed"})
+        console.log("inputClick")
+    }
 }
 
 //export default App
