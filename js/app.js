@@ -1,7 +1,10 @@
-//var ReactDOM = require('react-dom/client');
-
 //import React from "react"
 //import ReactDOM from "react-dom"
+//import Header from ".components/header.js"
+//import Image from ".img/react.jpg"
+//import './css/main.css'
+
+//var ReactDOM = require('react-dom/client');
 
 // ReactDOM.render(<div><h1>Заголовок</h1></div>, document.getElementById("app"))
 // ReactDOM.render(React.createElement('input', {
@@ -13,32 +16,9 @@
 
 //ReactDOM.render(<input placeholder="help text 2" />, document.getElementById("app"))
 
-const helpText = "Help Text!"
+//const helpText = "Help Text!"
 
-const inputMouseEnter = () => console.log({helpText})
-
-// Header как функция
-// function Header(){
-//     return (
-//         <header>Шапка сайта</header>
-//     )
-// }
-
-// Header как константа
-// const Header = () => {
-//     return (
-//         <header>Шапка сайта</header>
-//     )
-// }
-
-// Header как класс
-class Header extends React.Component {
-    render() {
-        return (
-            <header>Шапка сайта</header>
-        )
-    }
-}
+//const inputMouseEnter = () => console.log({helpText})
 
 // Компонент как фукнция
 // function App(){
@@ -55,18 +35,23 @@ class Header extends React.Component {
 
 // Компонент как класс
 class App extends React.Component {
+    helpText = "Help Text!"
+
     render() {
         return (
             <div className="helpClass">
-                <Header/>
+                <Header title="Шапка сайта"/>
+                <Header title="Шапка сайта 2"/>
 
-                <h3>{helpText}</h3>
-                <input placeholder={helpText} onMouseEnter={inputMouseEnter} />
-                <p>{helpText === 'Help Text!' ? "Да" : "Нет"}</p>
+                <h3>{this.helpText}</h3>
+                <input placeholder={this.helpText} onMouseEnter={this.inputMouseEnter} />
+                <p>{this.helpText === 'Help Text!' ? "Да" : "Нет"}</p>
+                <Image image="./img/react.jpg" />
             </div>
         )
     }
+
+    inputMouseEnter() {console.log("helpText")}
 }
 
-const app = document.getElementById("app")
-ReactDOM.render(<App />, app)
+//export default App
