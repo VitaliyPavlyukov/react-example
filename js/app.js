@@ -57,7 +57,15 @@ class App extends React.Component {
     render() {
         return (
             <div className="helpClass">
-                <Header title="Шапка сайта"/>                
+                <Header title="Шапка сайта"/>  
+
+                <main>
+                    <Users />
+                </main>  
+                <aside></aside>
+
+                <Button />
+                <Button text="Button" />            
 
                 <h3>{this.state.helpText}</h3>
                 <h3>{this.state.userData}</h3>

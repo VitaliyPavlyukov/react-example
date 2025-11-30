@@ -17,9 +17,7 @@ class Header extends React.Component {
     render() {
         return (
             <header className="header">
-                {this.props.title}
-                <Button />
-                <Button text="Button" />
+                {this.props.title}                
                 </header>            
         )
     }
