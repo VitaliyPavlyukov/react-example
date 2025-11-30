@@ -1,5 +1,5 @@
 const Button = (props) => {
-    // Хуки
+    // Изменение состояния через Хуки
     const [click, setClick] = React.useState(0)
     console.log('click', click)
 
