@@ -35,14 +35,47 @@
 
 // Компонент как класс
 class App extends React.Component {
-    constructor(props) {
+    constructor(props){
         super(props)
         this.state = {
+            users: [
+                {
+                    id: 0,
+                    firstname: "Bob",
+                    lastname: "Marley",
+                    bio: "Биография",
+                    age: 40,
+                    isHappy: true
+                },
+                {
+                    id: 1,
+                    firstname: "John",
+                    lastname: "Doe",
+                    bio: "Биография",
+                    age: 30,
+                    isHappy: false
+                }
+            ],
+            
             helpText: "Help Text!",
             userData: ""
         }
+
+        // В методе addUser можно использовать состояния
+        this.addUser = this.addUser.bind(this)
+
         this.inputClick = this.inputClick.bind(this)
     }
+
+    // Предыдущий конструктор
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         helpText: "Help Text!",
+    //         userData: ""
+    //     }
+    //     this.inputClick = this.inputClick.bind(this)
+    // }
     
     //Эффект в компоненте
     componentDidUpdate(prevProp){
@@ -60,9 +93,11 @@ class App extends React.Component {
                 <Header title="Шапка сайта"/>  
 
                 <main>
-                    <Users />
+                    <Users users={this.state.users} />
                 </main>  
-                <aside></aside>
+                <aside>
+                    <AddUser onAdd={this.addUser} />
+                </aside>
 
                 <Button />
                 <Button text="Button" />            
@@ -78,6 +113,14 @@ class App extends React.Component {
                 <Image image="./img/react.jpg" />
             </div>
         )
+    }
+
+    addUser(user){
+        console.log('user', user)
+
+        const id = this.state.users.length + 1
+        // ... - все атрибуты в объекте
+        this.setState({ users: [...this.state.users, {id, ...user}] })
     }
 
     inputMouseEnter() {console.log("helpText")}
