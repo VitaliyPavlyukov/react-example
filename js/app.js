@@ -42,7 +42,17 @@ class App extends React.Component {
             userData: ""
         }
         this.inputClick = this.inputClick.bind(this)
-    }    
+    }
+    
+    //Эффект в компоненте
+    componentDidUpdate(prevProp){
+        if (this.state.helpText !== 'Help'){
+            console.log("helpText не равен Help")
+        }
+        else {
+            console.log("helpText равен Help")
+        }
+    }
 
     render() {
         return (
