@@ -27,10 +27,13 @@ class AddUser extends React.Component {
 
         return (
             <form ref={(el)=> this.myForm = el}>
-                <input placeholder="Имя" value={this.state.firstname} onChange={(e) => this.setState({firstname: e.target.value})}></input>
-                <h2>Имя: </h2>
+                <label htmlFor="firstname">Имя:</label>
+                <input placeholder="Имя" value={this.state.firstname} onChange={(e) => this.setState({firstname: e.target.value})}></input>                
+                <label htmlFor="lastname">Фамилия:</label>
                 <input placeholder="Фамилия" value={this.state.lastname} onChange={(e) => this.setState({lastname: e.target.value})}></input>
+                <label htmlFor="bio">Биография:</label>
                 <textarea placeholder="Биография" value={this.state.bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
+                <label htmlFor="age">Возраст:</label>
                 <input placeholder="Возраст" value={this.state.age} onChange={(e) => this.setState({age: e.target.value})}></input>
                 <label htmlFor="isHappy">Счастлив?</label>
                 <input type="checkbox" id="isHappy" checked={this.state.isHappy} onChange={(e) => this.setState({isHappy: e.target.checked})}></input>
