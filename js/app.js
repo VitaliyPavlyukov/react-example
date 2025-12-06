@@ -33,12 +33,20 @@
 //     )
 // }
 
+//const baseUrl = 'https://reqres.in/api/users?page=1'
+const baseUrl = 'https://http.hexlet.app/http-api/users'
+
+
 // Компонент как класс
 class App extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            users: [
+
+        // Получение пользователей по адресу
+        axios.get(baseUrl).then((res) => {
+            console.log(res)
+            
+            var usersList = [
                 {
                     id: 0,
                     firstname: "Bob",
@@ -55,8 +63,13 @@ class App extends React.Component {
                     age: 30,
                     isHappy: false
                 }
-            ],
-            
+            ]
+
+            this.setState({users: usersList})
+        })
+
+        this.state = {
+            users: [],            
             helpText: "Help Text!",
             userData: ""
         }
