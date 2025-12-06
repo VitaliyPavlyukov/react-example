@@ -23,6 +23,7 @@ class User extends React.Component {
                     })
                 } } className="edit-icon">Редактировать</button>
                 <h3>{this.user.firstname} {this.user.lastname}</h3>
+                <img src={this.user.avatar} />
                 <p>{this.user.bio}</p>
                 <b>{this.user.isHappy ? 'Счастлив :)' : 'Не особо :('}</b>
 

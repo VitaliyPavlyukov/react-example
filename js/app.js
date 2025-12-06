@@ -49,17 +49,19 @@ class App extends React.Component {
             var usersList = [
                 {
                     id: 0,
-                    firstname: "Bob",
-                    lastname: "Marley",
+                    firstname: "Иван",
+                    lastname: "Иванов",
                     bio: "Биография",
+                    avatar: 'img/image_1301121174140609534.gif',
                     age: 40,
                     isHappy: true
                 },
                 {
                     id: 1,
-                    firstname: "John",
-                    lastname: "Doe",
+                    firstname: "Сергей",
+                    lastname: "Сергиев",
                     bio: "Биография",
+                    avatar: 'img/99px_ru_avatar_178004_sijaushaja_golubaja_abstrakcija.gif',
                     age: 30,
                     isHappy: false
                 }
