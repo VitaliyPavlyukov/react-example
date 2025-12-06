@@ -1,3 +1,5 @@
+HomePage https://vitaliypavlyukov.github.io/react-example/
+
 Visual Studio Code open with Live Server
 
 `git clone https://github.com/VitaliyPavlyukov/react-example.git`
