@@ -63,6 +63,8 @@ class App extends React.Component {
 
         // В методе addUser можно использовать состояния
         this.addUser = this.addUser.bind(this)
+        this.deleteUser = this.deleteUser.bind(this)
+        this.editUser = this.editUser.bind(this)
 
         this.inputClick = this.inputClick.bind(this)
     }
@@ -93,7 +95,7 @@ class App extends React.Component {
                 <Header title="Шапка сайта"/>  
 
                 <main>
-                    <Users users={this.state.users} />
+                    <Users users={this.state.users} onEdit={this.editUser} onDelete={this.deleteUser} />
                 </main>  
                 <aside>
                     <AddUser onAdd={this.addUser} />
@@ -113,6 +115,16 @@ class App extends React.Component {
                 <Image image="./img/react.jpg" />
             </div>
         )
+    }
+
+    deleteUser(id){
+        this.setState({
+            users: this.state.users.filter((el) => el.id !== id)
+        })
+    }
+
+    editUser(user){
+        console.log(user)
     }
 
     addUser(user){
