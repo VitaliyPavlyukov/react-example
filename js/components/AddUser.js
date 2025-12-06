@@ -6,6 +6,7 @@ class AddUser extends React.Component {
         this.state = {
             firstname: "",
             lastname: "",
+            avatar : "",
             bio: "",
             age: 1,
             isHappy: false
@@ -15,6 +16,7 @@ class AddUser extends React.Component {
         if (this.props.user){
             this.state.firstname = this.props.user.firstname;   
             this.state.lastname = this.props.user.lastname;  
+            this.state.avatar = this.props.user.avatar;  
             this.state.bio = this.props.user.bio;  
             this.state.age = this.props.user.age;  
             this.state.isHappy = this.props.user.isHappy;                       
@@ -37,6 +39,7 @@ class AddUser extends React.Component {
                     this.userAdd = {
                         firstname: this.state.firstname,
                         lastname: this.state.lastname,
+                        avatar: this.state.avatar,
                         bio: this.state.bio,
                         age: this.state.age,
                         isHappy: this.state.isHappy
