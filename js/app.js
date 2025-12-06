@@ -124,7 +124,11 @@ class App extends React.Component {
     }
 
     editUser(user){
-        console.log(user)
+        let allUsers = this.state.users
+        allUsers[user.id] = user
+        this.setState({ users: []}, () => {
+            this.setState({ users: [...allUsers] })
+        })
     }
 
     addUser(user){

@@ -31,7 +31,7 @@ class AddUser extends React.Component {
                         isHappy: this.state.isHappy
                     }
                     if (this.props.user)
-                        this.userAdd.id = user.id
+                        this.userAdd.id = this.props.user.id
                     this.props.onAdd(this.userAdd)
                 }
                 }>Добавить</button>
